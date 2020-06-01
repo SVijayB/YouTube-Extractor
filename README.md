@@ -2,6 +2,17 @@
 
 A Simple and Easy to use GUI based YouTube Video/Audio Extractor.
 
+## Usage
+
+Before running the YouTube-Extractor, make sure you have pytube installed. To do this, type the following code in your terminal.
+<pre>
+pip install pytube
+</pre>
+
+As an alternative you can also cd to YouTube-Extractor and type 
+<pre>
+pip install -r requirements.txt
+</pre>
 
 ## Contributing 
 
