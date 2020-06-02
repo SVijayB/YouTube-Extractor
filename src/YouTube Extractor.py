@@ -106,23 +106,16 @@ class SecondPage:
         
         if(self.choice=="2"):
             self.stream = self.yt.streams.filter(only_audio=True).first()
+
+        self.downloadFile()
         
-        self.loading = Label(self.downloadWindow,text = "Downloading In Progress ...",
+        self.loading = Label(self.downloadWindow,text = "Download Completed\nThanks For Using YouTube Extractor",
         font=("Small Fonts",40))
-
         self.loading.grid(pady = (100,0))
+        downloadWindow.mainloop()
 
-        self.progressBar = ttk.Progressbar(self.downloadWindow,length = 500, 
-        orient = "horizontal", mode = "indeterminate")
-        self.progressBar.grid(pady=(50,0))
-        self.progressBar.start()
-
-        threading.Thread(target=self.downloadFile()).start()
-    
     def downloadFile(self):
         self.stream.download(self.folderName)
-        sys.exit(0)
-        
 
 if __name__ == "__main__":
     window = Tk()
