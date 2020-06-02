@@ -24,7 +24,7 @@ class application():
         fg = "green", bg="white", font=("Agency Fb",25))
         self.entry.grid(pady = (0,15), ipady=2)
 
-        self.error = Label(self.root, text="", font=("Concert One",20), bg="black", fg="white")
+        self.error = Label(self.root, text="", font=("freestyle script",25), bg="black", fg="white")
         self.error.grid(pady=(0,8))
 
         self.save = Label(self.root,text="Select The Location You Want To Save In", 
@@ -42,13 +42,13 @@ class application():
         bg = "black", fg = "white", font=("Algerian",30))
         self.choice.grid()
 
-        downloadChoices = [("Video MP4",1),("Audio MP3",2)]
+        downloadChoices = [(" Video MP4 ",1),(" Audio MP3 ",2)]
         self.choiceVar = StringVar()
         self.choiceVar.set(1)
 
         for text,mode in downloadChoices:
             self.type = Radiobutton(self.root, text=text, font=("Northwest old", 15), 
-            fg = "white",bg = "black",variable=self.choiceVar, value = mode)
+            fg = "#f7b3b2",bg = "black",variable=self.choiceVar, value = mode)
             self.type.grid()
         
         self.download = Button(self.root, text="Download", width = 10, command = self.checkYoutubeLink, 
@@ -59,23 +59,29 @@ class application():
     def checkYoutubeLink(self):
         self.matchYoutubeLink = re.match("^https://www.youtube.com/.*", self.entryvar.get())
         
-        if(self.matchYoutubeLink==False):
-            self.error.config(text="Invalid YouTube Link", fg = "red", bg="black")
-        elif(self.directory==False):
-            self.fileLocation.config(text="Please Choose the Folder",fg = "red", bg="black")
-        elif(self.matchYoutubeLink and self.directory()):
+        if(not self.matchYoutubeLink):
+            self.error.config(text="Invalid YouTube Link", fg = "red")
+        elif(not self.openDirectory):
+            self.fileLocation.config(text = "Please Select A Location To Save The File", fg="red", 
+            bg = "black", font=("Freestyle script",25))
+        elif(self.matchYoutubeLink and self.openDirectory):
             self.downloadWindow()
 
     def downloadWindow(self):
         self.new_window = Toplevel(self.root) 
         self.root.withdraw()
-        self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory.get(),self.choiceVar.get())
+        # self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory.get(),self.choiceVar.get())
 
     def openDirectory(self):
         self.FolderName = filedialog.askdirectory()
-        self.fileLocation.config(text = self.FolderName, fg="green", 
-        bg = "black", font=("Freestyle script",25))
-        return True
+        if(len(self.FolderName)>1):
+            self.fileLocation.config(text = self.FolderName, fg="green", 
+            bg = "black", font=("Freestyle script",25))
+            return True
+        else:
+            self.fileLocation.config(text = "Please Choose The Folder", fg="red", 
+            bg = "black", font=("Freestyle script",25))
+
 
 if __name__ == "__main__":
     window = Tk()
