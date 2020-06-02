@@ -13,6 +13,7 @@ class application():
         self.root.grid_columnconfigure(0,weight=1)
         self.root.configure(bg="black")
         data = open("../version.txt" , "r").read()
+        print("YouTube Extractor | " + data)
         self.root.title("YouTube Extractor | " + data)
         root.iconbitmap("../assets/favicon_io/favicon.ico")
 
@@ -119,6 +120,8 @@ class SecondPage:
         downloadWindow.mainloop()
 
     def downloadFile(self):
+        print("\nYour File Is Being Downloaded...\nWe will notify you once Download is completed.")
+        print("Thanks For Using YouTube Extractor")
         self.stream.download(self.folderName)
     
     def closing(self):
