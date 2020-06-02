@@ -1,5 +1,6 @@
 from pytube import YouTube
 from tkinter import *
+from tkinter import filedialog
 import re
 import threading
 
@@ -19,7 +20,7 @@ class application():
         self.entry = Entry(self.root, width= 70, textvariable = self.entryvar, 
         fg = "green", bg="white", font=("Agency Fb",25))
         self.entry.grid(pady = (0,15), ipady=2)
-        self.error = Label(self.root, text="", font=("Concert One",20))
+        self.error = Label(self.root, text="", font=("Concert One",20), bg="black", fg="white")
         self.error.grid(pady=(0,8))
         self.save = Label(self.root,text="Select The Location You Want To Save In", 
         fg = "white",bg = "black", font=("Algerian",30))
@@ -27,6 +28,14 @@ class application():
         self.directory = Button(self.root, text="Location",
         fg = "white", bg = "black",font = ("Bell MT", 15),command = self.openDirectory)
         self.directory.grid(pady=(10,3))
+        self.fileLocation = Label(self.root, text="", bg="black")
+        self.fileLocation.grid()
+
+    def openDirectory(self):
+        self.FolderName = filedialog.askdirectory()
+        self.fileLocation.config(text = self.FolderName, fg="green", 
+        bg = "black", font=("Freestyle script",25))
+        return True
 
 if __name__ == "__main__":
     window = Tk()
