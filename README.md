@@ -1,6 +1,10 @@
 # YouTube Extractor
 
-A Simple and Easy to use GUI based YouTube Video/Audio Extractor.
+<p align="center">
+    <img src="https://i.ibb.co/bPM50BQ/Logo.jpg" alt="Logo" border="0">
+    <br>A Simple and Easy to use GUI based YouTube Video/Audio Extractor.
+</p>
+
 
 ## Table of Contents
 
@@ -11,7 +15,7 @@ A Simple and Easy to use GUI based YouTube Video/Audio Extractor.
 
 ## Motivation
 
-We all have tried downloading a youtube video atleast once in our lives. Be it a song or a video for your school/college assignment. <br>
+We all have tried downloading a YouTube video atleast once in our lives. Be it a song or a video for your school/college assignment. <br>
 True, there are plenty of browser extensions and online websites avilable to download YouTube videos. But, at times either the extension malfunctions or the servers don't work anymore. 
 
 And hence YouTube-Extractor was made to solve this problem. You can launch it any time and download any video/audio on YouTube.
