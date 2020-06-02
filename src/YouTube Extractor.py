@@ -52,7 +52,7 @@ class application():
             self.type.grid()
         
         self.download = Button(self.root, text="Download", width = 10, command = self.checkYoutubeLink, 
-        font=("Bell MT", 15))
+        fg = "white", bg = "black", font=("Bell MT", 15))
         self.download.grid(pady=(30,5))
 
 
@@ -61,10 +61,10 @@ class application():
         
         if(not self.matchYoutubeLink):
             self.error.config(text="Invalid YouTube Link", fg = "red")
-        elif(not self.openDirectory):
+        elif(len(self.FolderName)<1):
             self.fileLocation.config(text = "Please Select A Location To Save The File", fg="red", 
             bg = "black", font=("Freestyle script",25))
-        elif(self.matchYoutubeLink and self.openDirectory):
+        elif(self.matchYoutubeLink and len(self.FolderName)>1):
             self.downloadWindow()
 
     def downloadWindow(self):
@@ -81,6 +81,8 @@ class application():
         else:
             self.fileLocation.config(text = "Please Choose The Folder", fg="red", 
             bg = "black", font=("Freestyle script",25))
+            return False
+        return False
 
 
 if __name__ == "__main__":
