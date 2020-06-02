@@ -101,13 +101,13 @@ class SecondPage:
         self.yt = YouTube(self.youtubeEntry)
 
         if(self.choice=="1"):
-            self.video_type = self.yt.streams.first()
-            self.video_type.download(self.folderName)
+            stream = self.yt.streams.first()
+            stream.download(self.folderName)
             sys.exit(0)
         
         if(self.choice=="2"):
-            self.video_type = self.yt.streams.filter(only_audio=True).first()
-            self.video_type.download(self.folderName)
+            stream = self.yt.streams.filter(only_audio=True).first()
+            stream.download(self.folderName)
             sys.exit(0)
         
         self.loading = Label(self.downloadWindow,text = "Downloading In Progress ...",
