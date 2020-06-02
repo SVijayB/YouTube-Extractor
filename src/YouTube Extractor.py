@@ -1,6 +1,7 @@
 from pytube import YouTube
 from tkinter import *
 from tkinter import filedialog
+from tkinter import ttk
 import re
 import threading
 
@@ -70,7 +71,7 @@ class application():
     def downloadWindow(self):
         self.new_window = Toplevel(self.root) 
         self.root.withdraw()
-        self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory.get(),self.choiceVar.get())
+        self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory, self.choiceVar.get())
 
     def openDirectory(self):
         self.FolderName = filedialog.askdirectory()
@@ -108,6 +109,14 @@ class SecondPage:
         font=("Small Fonts",40))
 
         self.loading.grid(pady = (100,0))
+
+        self.loadingPercent = Label(self.downloadWindow,text="0", fg="green", font=("Viner Hand ITC",40))
+        self.loadingPercent.grid(pady=(50,0))
+
+        self.progressBar = ttk.Progressbar(self.downloadWindow,length = 500, 
+        orient = "horizontal", mode = "indeterminate")
+        self.progressBar.grid(pady=(50,0))
+        self.progressBar.start()
 
 if __name__ == "__main__":
     window = Tk()
