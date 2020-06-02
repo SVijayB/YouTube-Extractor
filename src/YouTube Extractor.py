@@ -28,6 +28,8 @@ class application():
         self.error = Label(self.root, text="", font=("freestyle script",25), bg="black", fg="white")
         self.error.grid(pady=(0,8))
 
+        self.location = StringVar()
+
         self.save = Label(self.root,text="Select The Location You Want To Save In", 
         fg = "white",bg = "black", font=("Algerian",30))
         self.save.grid()
@@ -71,13 +73,14 @@ class application():
     def downloadWindow(self):
         self.new_window = Toplevel(self.root) 
         self.root.withdraw()
-        self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory, self.choiceVar.get())
+        self.app = SecondPage(self.new_window,self.entryvar.get(),self.location, self.choiceVar.get())
 
     def openDirectory(self):
         self.FolderName = filedialog.askdirectory()
         if(len(self.FolderName)>1):
             self.fileLocation.config(text = self.FolderName, fg="green", 
             bg = "black", font=("Freestyle script",25))
+            self.location = self.FolderName
             return True
         else:
             self.fileLocation.config(text = "Please Choose The Folder", fg="red", 
@@ -99,24 +102,24 @@ class SecondPage:
 
         if(self.choice=="1"):
             self.video_type = self.yt.streams.first()
-            self.fileSize = self.video_type.filesize
+            self.video_type.download(self.folderName)
+            sys.exit(0)
         
         if(self.choice=="2"):
             self.video_type = self.yt.streams.filter(only_audio=True).first()
-            self.fileSize = self.video_type.filesize
+            self.video_type.download(self.folderName)
+            sys.exit(0)
         
         self.loading = Label(self.downloadWindow,text = "Downloading In Progress ...",
         font=("Small Fonts",40))
 
         self.loading.grid(pady = (100,0))
 
-        self.loadingPercent = Label(self.downloadWindow,text="0", fg="green", font=("Viner Hand ITC",40))
-        self.loadingPercent.grid(pady=(50,0))
-
         self.progressBar = ttk.Progressbar(self.downloadWindow,length = 500, 
         orient = "horizontal", mode = "indeterminate")
         self.progressBar.grid(pady=(50,0))
         self.progressBar.start()
+        
 
 if __name__ == "__main__":
     window = Tk()
