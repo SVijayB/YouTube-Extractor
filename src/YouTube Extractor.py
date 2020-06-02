@@ -4,6 +4,7 @@ from tkinter import filedialog
 from tkinter import ttk
 import re
 import threading
+import time
 
 class application():
     def __init__(self,root):
@@ -101,14 +102,10 @@ class SecondPage:
         self.yt = YouTube(self.youtubeEntry)
 
         if(self.choice=="1"):
-            stream = self.yt.streams.first()
-            stream.download(self.folderName)
-            sys.exit(0)
+            self.stream = self.yt.streams.first()
         
         if(self.choice=="2"):
-            stream = self.yt.streams.filter(only_audio=True).first()
-            stream.download(self.folderName)
-            sys.exit(0)
+            self.stream = self.yt.streams.filter(only_audio=True).first()
         
         self.loading = Label(self.downloadWindow,text = "Downloading In Progress ...",
         font=("Small Fonts",40))
@@ -119,6 +116,12 @@ class SecondPage:
         orient = "horizontal", mode = "indeterminate")
         self.progressBar.grid(pady=(50,0))
         self.progressBar.start()
+
+        threading.Thread(target=self.downloadFile()).start()
+    
+    def downloadFile(self):
+        self.stream.download(self.folderName)
+        sys.exit(0)
         
 
 if __name__ == "__main__":
