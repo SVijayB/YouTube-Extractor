@@ -12,6 +12,9 @@ class application():
         self.root.grid_rowconfigure(0,weight=2)
         self.root.grid_columnconfigure(0,weight=1)
         self.root.configure(bg="black")
+        data = open("../version.txt" , "r").read()
+        self.root.title("YouTube Extractor | " + data)
+        root.iconbitmap("../assets/favicon_io/favicon.ico")
 
         self.heading = Label(self.root,text = "YOUTUBE EXTRACTOR",fg = "green",
         bg = "black", font=("Castellar", 70))
