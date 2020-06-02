@@ -70,7 +70,7 @@ class application():
     def downloadWindow(self):
         self.new_window = Toplevel(self.root) 
         self.root.withdraw()
-        # self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory.get(),self.choiceVar.get())
+        self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory.get(),self.choiceVar.get())
 
     def openDirectory(self):
         self.FolderName = filedialog.askdirectory()
@@ -84,6 +84,17 @@ class application():
             return False
         return False
 
+class SecondPage:
+    def __init__(self,downloadWindow,youtubeEntry,folderName,choice):
+        self.downloadWindow = downloadWindow
+        self.downloadWindow.state("zoomed")
+        self.downloadWindow.grid_rowconfigure(0,weight=0)
+        self.downloadWindow.grid_columnconfigure(0,weight=1)
+        self.youtubeEntry = youtubeEntry
+        self.folderName = folderName
+        self.choice = choice
+
+        
 
 if __name__ == "__main__":
     window = Tk()
