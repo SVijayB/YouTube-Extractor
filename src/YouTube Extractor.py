@@ -50,7 +50,26 @@ class application():
             self.type = Radiobutton(self.root, text=text, font=("Northwest old", 15), 
             fg = "white",bg = "black",variable=self.choiceVar, value = mode)
             self.type.grid()
+        
+        self.download = Button(self.root, text="Download", width = 10, command = self.checkYoutubeLink, 
+        font=("Bell MT", 15))
+        self.download.grid(pady=(30,5))
 
+
+    def checkYoutubeLink(self):
+        self.matchYoutubeLink = re.match("^https://www.youtube.com/.*", self.entryvar.get())
+        
+        if(self.matchYoutubeLink==False):
+            self.error.config(text="Invalid YouTube Link", fg = "red", bg="black")
+        elif(self.directory==False):
+            self.fileLocation.config(text="Please Choose the Folder",fg = "red", bg="black")
+        elif(self.matchYoutubeLink and self.directory()):
+            self.downloadWindow()
+
+    def downloadWindow(self):
+        self.new_window = Toplevel(self.root) 
+        self.root.withdraw()
+        self.app = SecondPage(self.new_window,self.entryvar.get(),self.directory.get(),self.choiceVar.get())
 
     def openDirectory(self):
         self.FolderName = filedialog.askdirectory()
