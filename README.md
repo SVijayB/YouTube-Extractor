@@ -5,6 +5,19 @@
     <br>A Simple and Easy to use GUI based YouTube Video/Audio Extractor.
 </p>
 
+---
+---
+
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/graphs/contributors)
+
+[![GitHub license](https://img.shields.io/github/license/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/releases)
+[![GitHub repo size](https://img.shields.io/github/repo-size/SVijayB/YouTube-Extractor)](https://github.com/SVijayB/YouTube-Extractor)
+
+[![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat)](https://github.com/SVijayB/YouTube-Extractor/blob/master/docs/CODE_OF_CONDUCT.md)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/SVijayB/YouTube-Extractor/blob/master/docs/CONTRIBUTING.md)
 
 ## Table of Contents
 
