@@ -112,10 +112,14 @@ class SecondPage:
         self.loading = Label(self.downloadWindow,text = "Download Completed\nThanks For Using YouTube Extractor",
         font=("Small Fonts",40))
         self.loading.grid(pady = (100,0))
+        downloadWindow.protocol("WM_DELETE_WINDOW",self.closing)
         downloadWindow.mainloop()
 
     def downloadFile(self):
         self.stream.download(self.folderName)
+    
+    def closing(self):
+        sys.exit(0)
 
 if __name__ == "__main__":
     window = Tk()
