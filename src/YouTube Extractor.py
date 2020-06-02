@@ -94,7 +94,20 @@ class SecondPage:
         self.folderName = folderName
         self.choice = choice
 
+        self.yt = YouTube(self.youtubeEntry)
+
+        if(self.choice=="1"):
+            self.video_type = self.yt.streams.first()
+            self.fileSize = self.video_type.filesize
         
+        if(self.choice=="2"):
+            self.video_type = self.yt.streams.filter(only_audio=True).first()
+            self.fileSize = self.video_type.filesize
+        
+        self.loading = Label(self.downloadWindow,text = "Downloading In Progress ...",
+        font=("Small Fonts",40))
+
+        self.loading.grid(pady = (100,0))
 
 if __name__ == "__main__":
     window = Tk()
