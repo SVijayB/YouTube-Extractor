@@ -30,7 +30,7 @@
 We all have tried downloading a YouTube video atleast once in our lives. Be it a song or a video for your school/college assignment. <br>
 True, there are plenty of browser extensions and online websites avilable to download YouTube videos. But, at times either the extension malfunctions or the servers don't work anymore. 
 
-And hence YouTube-Extractor was made to solve this problem. You can launch it any time and download any video/audio on YouTube.
+And hence YouTube-Extractor was made. You can launch it any time and download any video/audio on YouTube.
 
 ## Usage
 
@@ -39,7 +39,7 @@ Before running the YouTube-Extractor, make sure you have pytube3 installed. To d
 pip install pytube3
 </pre>
 
-As an alternative you can also cd to YouTube-Extractor and type 
+As an alternative you can also cd to YouTube-Extractor directory and type 
 <pre>
 pip install -r requirements.txt
 </pre>
@@ -54,7 +54,7 @@ Just follow the steps below : <br>
 - Open your terminal and type pip show pytube3
 - Open your file explorer and go to the location it shows (Default = c:\users\username\appdata\local\programs\python\python37\lib\site-packages)
 - Open the `extract.py` file present in the `pytube` folder.
-- Go to line **306** or search for `parse_qs(formats[i]["cipher"])`
+- Go to line number **306** or search for `parse_qs(formats[i]["cipher"])`
 - Change "cipher" to "signatureCipher" (make sure 'C' is capital).
 
 ## Contributing 
