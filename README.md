@@ -49,7 +49,8 @@ Once you have pytube3 installed, just run the `YouTube Extractor.py` file presen
 
 **NOTE** : Sometimes, the application might throw an error stating that the video is not avilable. Just close the window and launch the program again.
 
-**NOTE** : If you are facing a `KeyError: 'cipher'`, you might have to modify your pytube3 package files. Just follow the steps below : <br>
+**NOTE** : If you are facing a `KeyError: 'cipher'`, you might have to modify your pytube3 package files.<br>
+Just follow the steps below : <br>
 - Open your terminal and type pip show pytube3
 - Open your file explorer and go to the location it shows (Default = c:\users\username\appdata\local\programs\python\python37\lib\site-packages)
 - Open the `extract.py` file present in the `pytube` folder.
