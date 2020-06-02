@@ -5,6 +5,18 @@
     <br>A Simple and Easy to use GUI based YouTube Video/Audio Extractor.
 </p>
 
+---
+
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/graphs/contributors)
+
+[![GitHub license](https://img.shields.io/github/license/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/SVijayB/YouTube-Extractor.svg)](https://github.com/SVijayB/YouTube-Extractor/releases) 
+[![GitHub repo size](https://img.shields.io/github/repo-size/SVijayB/YouTube-Extractor)](https://github.com/SVijayB/YouTube-Extractor)
+
+[![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat)](https://github.com/SVijayB/YouTube-Extractor/blob/master/docs/CODE_OF_CONDUCT.md)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/SVijayB/YouTube-Extractor/blob/master/docs/CONTRIBUTING.md)
 
 ## Table of Contents
 
@@ -37,7 +49,8 @@ Once you have pytube3 installed, just run the `YouTube Extractor.py` file presen
 
 **NOTE** : Sometimes, the application might throw an error stating that the video is not avilable. Just close the window and launch the program again.
 
-**NOTE** : If you are facing a `KeyError: 'cipher'`, you might have to modify your pytube3 package files. Just follow the steps below : <br>
+**NOTE** : If you are facing a `KeyError: 'cipher'`, you might have to modify your pytube3 package files.<br>
+Just follow the steps below : <br>
 - Open your terminal and type pip show pytube3
 - Open your file explorer and go to the location it shows (Default = c:\users\username\appdata\local\programs\python\python37\lib\site-packages)
 - Open the `extract.py` file present in the `pytube` folder.
