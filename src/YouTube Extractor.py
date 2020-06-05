@@ -56,7 +56,7 @@ class application():
 
         for text,mode in downloadChoices:
             self.type = Radiobutton(self.root, text=text, font=("Northwest old", 15), 
-            fg = "#f7b3b2",bg = "black",variable=self.choiceVar, value = mode)
+            fg = "#FF6347",bg = "black",variable=self.choiceVar, value = mode)
             self.type.grid()
         
         self.download = Button(self.root, text="Download", width = 10, command = self.checkYoutubeLink, 
