@@ -65,4 +65,4 @@ Also, thanks for contributing to Open-source!
 
 ## License 
 
-YouTube Extractor is Licensed under MIT. Read the [LICENSE](https://github.com/SVijayB/YouTube-Extractor/blob/master/LICENSE) file for more information.
+YouTube Extractor is under The MIT License. Read the [LICENSE](https://github.com/SVijayB/YouTube-Extractor/blob/master/LICENSE) file for more information.
