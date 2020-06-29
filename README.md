@@ -64,6 +64,8 @@ Once you have pytube3 installed, just run the `YouTube Extractor.py` file presen
 
 ## Usage
 
+Once you have the fonts and pytube3 installed. Just open the src folder and launch the `Youtube Extractor.py` file. 
+
 **NOTE** : Sometimes, the application might throw an error stating that the video is not avilable. Just close the window and launch the program again.
 
 **NOTE** : If you are facing a `KeyError: 'cipher'`, you might have to modify your pytube3 package files.<br>
