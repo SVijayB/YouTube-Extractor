@@ -21,6 +21,7 @@
 ## Table of Contents
 
 - [Motivation](#Motivation)
+- [Installation](Installation)
 - [Usage](#Usage)
 - [Contributing](#Contributing)
 - [License](#License)
@@ -32,20 +33,36 @@ True, there are plenty of browser extensions and online websites avilable to dow
 
 And hence YouTube-Extractor was made. You can launch it any time and download any video/audio on YouTube.
 
-## Usage
+## Installation
+
+For the latest stable version, head to [Releases](https://github.com/SVijayB/YouTube-Extractor/releases)
+
+Download and extract the source code.
+
+As an alternative, you could also clone the repository using,
+
+<pre>
+git clone https://github.com/SVijayB/YouTube-Extractor.git
+</pre>
 
 Before running the YouTube-Extractor, make sure you have pytube3 installed. To do this, type the following code in your terminal.
+
 <pre>
 pip install pytube3
 </pre>
 
 As an alternative you can also cd to YouTube-Extractor directory and type 
+
 <pre>
 pip install -r requirements.txt
 </pre>
 
 To check if pytube3 is successfully installed on your computer, open your terminal and type `pytube3 --version`
 Once you have pytube3 installed, just run the `YouTube Extractor.py` file present in the `src` folder.
+
+**Note** : Typing-Speed-Test uses custom fonts. Most windows computers have them preinstalled. However, if you don't have them already, just open the `Fonts` folder present in assets and launch all the files present and hit on install.
+
+## Usage
 
 **NOTE** : Sometimes, the application might throw an error stating that the video is not avilable. Just close the window and launch the program again.
 
