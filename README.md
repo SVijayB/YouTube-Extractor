@@ -48,7 +48,7 @@ git clone https://github.com/SVijayB/YouTube-Extractor.git
 Before running the YouTube-Extractor, make sure you have pytube3 installed. To do this, type the following code in your terminal.
 
 <pre>
-pip install pytube3
+python -m pip install pytube3==10.4.1
 </pre>
 
 As an alternative you can also cd to YouTube-Extractor directory and type 
