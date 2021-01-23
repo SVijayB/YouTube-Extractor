@@ -59,7 +59,7 @@ class SelectionWindow():
 
 
     def checkYoutubeLink(self):
-        self.matchYoutubeLink = re.match("^https:..www.youtube.com..*", self.entryvar.get())
+        self.matchYoutubeLink = any([re.match(r, self.entryvar.get()) for r in ['^(.*?)www.youtube.com.*', '^(.*?)youtu.be.*']])
         
         if(not self.matchYoutubeLink):
             self.error.config(text="Invalid YouTube Link", fg = "red")
