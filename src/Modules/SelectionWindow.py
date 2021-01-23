@@ -44,11 +44,17 @@ class SelectionWindow():
         bg = "black", fg = "white", font=("Algerian",30))
         self.choice.grid()
 
-        downloadChoices = [(" Video MP4 ",1),(" Audio MP3 ",2)]
+        self.checkPlaylist = StringVar()
+        self.checkPlaylist.set(0)
+        self.type = Checkbutton(self.root, text="Playlist?", font=("Northwest", 15),
+        fg = "#FF6347",bg = "black", variable = self.checkPlaylist, onvalue = "1",offvalue = "0")
+        self.type.grid()
+
+        downloadChoices = [(" Video MP4 ", 1),(" Audio MP3 ", 2)]
         self.choiceVar = StringVar()
         self.choiceVar.set(1)
 
-        for text,mode in downloadChoices:
+        for text, mode in downloadChoices:
             self.type = Radiobutton(self.root, text=text, font=("Northwest", 15), 
             fg = "#FF6347",bg = "black",variable=self.choiceVar, value = mode)
             self.type.grid()
@@ -59,7 +65,7 @@ class SelectionWindow():
 
 
     def checkYoutubeLink(self):
-        self.matchYoutubeLink = re.match("^https://www.youtube.com/.*", self.entryvar.get())
+        self.matchYoutubeLink = any([re.match(r, self.entryvar.get()) for r in ['^(.*?)www.youtube.com.*', '^(.*?)youtu.be.*']])
         
         if(not self.matchYoutubeLink):
             self.error.config(text="Invalid YouTube Link", fg = "red")
@@ -72,7 +78,7 @@ class SelectionWindow():
     def downloadWindow(self):
         self.new_window = Toplevel(self.root) 
         self.root.withdraw()
-        self.app = SecondWindow(self.new_window,self.entryvar.get(),self.location, self.choiceVar.get())
+        self.app = SecondWindow(self.new_window,self.entryvar.get(),self.location, self.choiceVar.get(), self.checkPlaylist.get())
 
     def openDirectory(self):
         self.FolderName = filedialog.askdirectory()
