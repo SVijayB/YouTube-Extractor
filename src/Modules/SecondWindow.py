@@ -1,4 +1,5 @@
 from pytube import YouTube
+from pytube import Playlist
 from tkinter import *
 
 class SecondWindow:
@@ -15,11 +16,15 @@ class SecondWindow:
 
         if(self.choice=="1"):
             self.stream = self.yt.streams.first()
-        
-        if(self.choice=="2"):
-            self.stream = self.yt.streams.filter(only_audio=True).first()
+            self.downloadFile()
 
-        self.downloadFile()
+        elif(self.choice=="2"):
+            self.stream = self.yt.streams.filter(only_audio=True).first()
+            self.downloadFile()
+        
+        elif(self.choice=="3"):
+            self.PL = Playlist(self.youtubeEntry)
+            self.batchDownload()
         
         self.loading = Label(self.downloadWindow,text = "Download Completed\nThanks For Using YouTube Extractor",
         font=("Small Fonts",40))
@@ -28,9 +33,15 @@ class SecondWindow:
         downloadWindow.mainloop()
 
     def downloadFile(self):
-        print("\nYour File Is Being Downloaded...\nWe will notify you once Download is completed.")
-        print("Thanks For Using YouTube Extractor")
+        print("\nYour File Is Being Downloaded...\nWe will notify you once the download is completed.")
+        print("Thank you For Using YouTube Extractor")
         self.stream.download(self.folderName)
+
+    def batchDownload(self):
+        print("\nYour Files Are Being Downloaded...\nWe will notify you once the download is completed.")
+        print("Thank you For Using YouTube Extractor")
+        for video in self.PL.videos:
+                video.streams.first().download(self.folderName)
     
     def closing(self):
         sys.exit(0)

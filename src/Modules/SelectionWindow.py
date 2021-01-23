@@ -44,11 +44,11 @@ class SelectionWindow():
         bg = "black", fg = "white", font=("Algerian",30))
         self.choice.grid()
 
-        downloadChoices = [(" Video MP4 ",1),(" Audio MP3 ",2)]
+        downloadChoices = [(" Video MP4 ", 1),(" Audio MP3 ", 2),(" Complete playlist ", 3)]
         self.choiceVar = StringVar()
         self.choiceVar.set(1)
 
-        for text,mode in downloadChoices:
+        for text, mode in downloadChoices:
             self.type = Radiobutton(self.root, text=text, font=("Northwest", 15), 
             fg = "#FF6347",bg = "black",variable=self.choiceVar, value = mode)
             self.type.grid()
