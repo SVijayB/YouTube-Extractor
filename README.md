@@ -66,15 +66,7 @@ Once you have pytube3 installed, just run the `YouTube Extractor.py` file presen
 
 Once you have the fonts and pytube3 installed. Just open the src folder and launch the `Youtube Extractor.py` file. 
 
-**NOTE** : Sometimes, the application might throw an error stating that the video is not avilable. Just close the window and launch the program again.
-
-**NOTE** : If you are facing a `KeyError: 'cipher'`, you might have to modify your pytube3 package files.<br>
-Just follow the steps below : <br>
-- Open your terminal and type pip show pytube3
-- Open your file explorer and go to the location it shows (Default = c:\users\username\appdata\local\programs\python\python37\lib\site-packages)
-- Open the `extract.py` file present in the `pytube` folder.
-- Go to line number **306** or search for `parse_qs(formats[i]["cipher"])`
-- Change "cipher" to "signatureCipher" (make sure 'C' is capital).
+**Note** : In order to download an entire playlist at once, just copy the first video from the playlist -> index = 1, and select the playlist checkbox.
 
 ## Contributing 
 
