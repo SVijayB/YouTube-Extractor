@@ -44,7 +44,12 @@ class SelectionWindow():
         bg = "black", fg = "white", font=("Algerian",30))
         self.choice.grid()
 
-        downloadChoices = [(" Video MP4 ", 1),(" Audio MP3 ", 2),(" Complete playlist ", 3)]
+        self.checkPlaylist = StringVar().set(0)
+        self.type = Checkbutton(self.root, text="Playlist?", font=("Northwest", 15),
+        fg = "#FF6347",bg = "black", variable = self.checkPlaylist)
+        self.type.grid()
+
+        downloadChoices = [(" Video MP4 ", 1),(" Audio MP3 ", 2)]
         self.choiceVar = StringVar()
         self.choiceVar.set(1)
 
